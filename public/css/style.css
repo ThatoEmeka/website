@@ -1,0 +1,266 @@
+/* Page scroll effect and BG  */
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    color: cornsilk;
+}
+.container{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+}
+.container section{
+    min-width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* center content */
+    background: whitesmoke;
+
+    background-color: rgb(92, 13, 240);
+    background-image: radial-gradient(circle at center center, black, #ccc), repeating-radial-gradient(circle at center center, black, black, 1rem, transparent 2rem, transparent 1rem);
+    background-blend-mode: multiply;
+}
+
+
+.container section:nth-child(2){
+  background-color:#06ff9b76;
+  background-image: 
+    repeating-linear-gradient(
+      45deg,
+      rgba(82, 67, 67, 0.8),
+      rgba(0,0,0,0.8) 100px,
+      transparent 0px,
+      transparent 200px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      rgba(0,0,0,0.5),
+      rgba(0,0,0,0.5) 100px,
+      transparent 0px,
+      transparent 200px
+    );
+
+}
+.container section:nth-child(3){
+  background-color: #0e722d;
+}
+.container section:nth-child(4){
+    background : darkgray;
+}
+.container section .content{
+    max-width: 800px;
+    padding: 40px;
+    text-align: center;
+}
+.container section .content h2{
+    /* font-size: 4em;
+    color: darkgreen;
+    text-align: center; */
+
+    /* type efect start  */
+
+    color:white;
+    font-size: 2rem;
+    overflow: hidden;
+    border-right: .15em solid orange; 
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: .10em;
+    animation: 
+      typing 3.5s steps(40, end),
+      blink-caret .75s step-end infinite;
+} 
+
+  /* The typing effect */
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+  /* The typewriter cursor effect */
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange; }
+  }
+
+  /* type efect end thato */
+  
+
+  /* hover start hoverHere */
+  .hide {
+    display: none;
+  }
+      
+  .hoverHere:hover + .hide {
+    display: block;
+    color: #C7C4B9;
+  }
+  /* hover end  */
+
+/* .container section .content p{
+    font-size: 2.3em;
+    line-height: 1.4em;
+    color: whitesmoke;
+} */
+
+/* cards hover on skills */
+
+.cards {
+    padding-top: 10%;
+    display: flex;
+  }
+  .card {
+    width: 60%;5
+    height: auto;
+    background: white;
+    border-radius: 1rem;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    box-shadow: 3px 3px 12px 2px rgba(black, 0.6);
+    transition: 0.2s;
+    border: 2px, rgb(131, 13, 13);
+  }
+  .card img{
+      width: 100%;
+  }
+  .card:not(:first-child) {
+    margin-left: -2rem;
+  }
+  .card:not(:last-child):hover,
+  .card:not(:last-child):focus-within {
+    transform: translateY(-1rem);
+    ~ .card {
+      transform: translateX(2rem);
+    }
+  }
+
+  /* cards hover on skills end */
+
+
+
+/* second last page business card  */
+  /* card */
+
+.business-card {
+  width: 750px;
+  height: 308px;
+  background: #2D3035;
+  position: relative;
+  margin-top: 15%;
+  /* margin-left: 25%; */
+}
+
+.business-card-thato {
+  float: left;
+  background: #3D4045;
+  width: 276px;
+  height: 308px;
+}
+
+.business-card-pic {
+  width: 100px;
+  display: block;
+  
+  padding: 3px;
+  background: #303236;
+  border-radius: 100px;
+  border: solid 7px #54575f;
+  
+  margin: 0 auto;
+  margin-top: 50px;
+  
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    filter: gray;
+    filter: url("data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' height='0'><filter id='greyscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0' /></filter></svg>#greyscale");
+}
+
+.business-card-name,.business-card-title {
+  line-height: 0px;
+  text-align: center;
+  font-family: "dosis";
+  color: white;
+  font-size: 20px;
+}
+
+.business-card-name {
+  font-weight: bold;
+}
+
+.business-card-title {
+  color: #999999;
+  line-height: 5px;
+  font-size: 16px;
+}
+
+/* arrow thanks to : https://jsfiddle.net/josedvq/3HG6d/ */
+
+.business-card-arrow {
+  width: 0;
+  height: 0;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  padding-left: 3%;
+  overflow: hidden;
+  position: absolute;
+  top: calc(50% - 20px);
+  left: 270px;
+}
+
+.business-card-arrow:after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  margin-top: -20px;
+  margin-left: -20px;
+
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-left: 20px solid #3D4045;
+}
+
+/* -----------------
+  Details(right side)
+ ------------------- */ 
+.business-card-details {
+  float: right;
+  font-family: "Montserrat";
+  color: #e6e6e6;
+  font-size: 13px;
+  line-height: 20px;
+  width: 330px;
+  height: 283px;
+  display: inline-block;
+  overflow: hidden;
+  margin-top: 25px;
+}
+
+.business-card-details .fa {
+  color: #d9d9d9;
+  width: 20px;
+  font-size: 20px;
+  text-align: center;
+  margin-right: 10px;
+}
+
+.business-card-link {
+  color: #2A7F9C;
+  text-decoration: none;
+}
+
+.clearfix {
+  overflow: auto;
+  zoom: 1;
+}
+
+/* card end */
