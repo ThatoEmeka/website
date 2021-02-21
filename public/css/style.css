@@ -28,34 +28,39 @@
     background-blend-mode: multiply;
 }
 
+.heading2 {
+  font-size: 300%;
+}
 
 .container section:nth-child(2){
-  background-color:#06ff9b76;
+background: url('./resources/bgetn.jpg');
+background-color: #2D3035;
+}
+.container section:nth-child(3){
+  background-color: #333;
+}
+.container section:nth-child(4){
+
+  background: url('resources/bg4th.jpg');
+  /* background-color:#bcf2dd76;
   background-image: 
     repeating-linear-gradient(
       45deg,
-      rgba(82, 67, 67, 0.8),
-      rgba(0,0,0,0.8) 100px,
+      rgba(192, 239, 240, 0.8),
+      rgba(111, 216, 220, 0.8) 100px,
       transparent 0px,
       transparent 200px
     ),
     repeating-linear-gradient(
       -45deg,
-      rgba(0,0,0,0.5),
-      rgba(0,0,0,0.5) 100px,
+      rgba(217, 93, 236, 0.5),
+      rgba(226, 81, 141, 0.5) 100px,
       transparent 0px,
       transparent 200px
-    );
-
-}
-.container section:nth-child(3){
-  background-color: #0e722d;
-}
-.container section:nth-child(4){
-    background : darkgray;
+    ); */
 }
 .container section .content{
-    max-width: 800px;
+    /* max-width: 800px; */
     padding: 40px;
     text-align: center;
 }
@@ -113,11 +118,11 @@
 /* cards hover on skills */
 
 .cards {
-    padding-top: 10%;
+    padding-top: 5%;
     display: flex;
   }
   .card {
-    width: 60%;5
+    width: 50%;
     height: auto;
     background: white;
     border-radius: 1rem;
@@ -127,7 +132,7 @@
     padding: 1.5rem;
     box-shadow: 3px 3px 12px 2px rgba(black, 0.6);
     transition: 0.2s;
-    border: 2px, rgb(131, 13, 13);
+    border: 2px solid rgb(75, 56, 56);
   }
   .card img{
       width: 100%;
@@ -138,9 +143,10 @@
   .card:not(:last-child):hover,
   .card:not(:last-child):focus-within {
     transform: translateY(-1rem);
-    ~ .card {
-      transform: translateX(2rem);
-    }
+    border: 2px solid rgb(131, 223, 25);
+  }
+  .card:not(:last-child):focus-within ~ .card {
+    transform: translateX(2rem);
   }
 
   /* cards hover on skills end */
@@ -151,12 +157,13 @@
   /* card */
 
 .business-card {
-  width: 750px;
-  height: 308px;
+  width: 120%;
+  height: 100%;
   background: #2D3035;
   position: relative;
   margin-top: 15%;
   /* margin-left: 25%; */
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
 }
 
 .business-card-thato {
@@ -167,7 +174,7 @@
 }
 
 .business-card-pic {
-  width: 100px;
+  width: 100%;
   display: block;
   
   padding: 3px;
@@ -233,10 +240,10 @@
   Details(right side)
  ------------------- */ 
 .business-card-details {
-  float: right;
+  /* float: right; */
   font-family: "Montserrat";
   color: #e6e6e6;
-  font-size: 13px;
+  font-size: 15px;
   line-height: 20px;
   width: 330px;
   height: 283px;
@@ -264,3 +271,59 @@
 }
 
 /* card end */
+
+/* final page little card trick  */
+
+@import 'https://fonts.googleapis.com/css?family=Lily+Script+One';
+body {
+  background: rgb(187, 185, 185);
+  font-family: 'Lily Script One';
+}
+
+.card4 {
+  /* position: absolute; */
+  top: 50%;
+  left: 50%;
+  width: 350px;
+  height: 350px;
+  margin: -150px;
+  float: left;
+  perspective: 500px;
+}
+.incard {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+
+.card4:hover .incard {
+  transform: rotateY( 180deg ) ;
+  transition: transform 0.5s;
+}
+
+.front,
+.back {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: white;
+  line-height: 300px;
+  color: #03446A;
+  text-align: center;
+  font-size: 60px;
+  border-radius: 5px;
+  backface-visibility: hidden;
+}
+
+.back {
+  background: #03446A;
+  color: white;
+  transform: rotateY( 180deg );
+}
+
+
+/* final page little card trick  end */
